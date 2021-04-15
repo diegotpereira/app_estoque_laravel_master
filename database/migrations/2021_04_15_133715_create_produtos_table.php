@@ -18,7 +18,7 @@ class CreateProdutosTable extends Migration
             $table->string('descricao');
             $table->integer('quantidade');
             $table->decimal('valor', 15, 2);
-            $table->date('data_nascimento')->nullable();
+            $table->date('data_vencimento')->nullable();
             $table->timestamps();
         });
     }
