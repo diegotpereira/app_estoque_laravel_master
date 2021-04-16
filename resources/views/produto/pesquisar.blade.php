@@ -8,6 +8,10 @@
      <div class="container">
           <h1 class="mt-2">Pesquisa de produtos</h1>
 
+          @if(!empty($mensagem))
+             <div class="alert alert-success mt-2"></div>
+          @endif
+
           <form action="/produtos/pesquisar" method="post" class="form-inline mt-2">
               <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
               <div class="form-group">
@@ -16,7 +20,7 @@
               </div>
               <input type="submit" class="btn btn-primary ml-2" value="Pesquisar">
           </form>
-          @if (!isset($produtos) OR !is_array(($produtos)) OR count($produtos) == 0)
+          @if(count($produtos) == 0)
              <div class="alert alert-danger mt-2">Nenhum produto encontrado com essa descrição!.</div>
           @else
                   <table class="table mt-2 text-center">
@@ -31,10 +35,12 @@
                      @foreach ($produtos as $p)
                         <tr>
                            <td>{{ $p->id }}</td>
-                           <td class="text-left"{{ $p->descricao }}</td>
+                           <td class="text-left">{{ $p->descricao }}</td>
                            <td>{{ $p->quantidade }}</td>
                            <td>{{ $p->valor }}</td>
                            <td>{{ $p->data_vencimento }}</td>
+                           <td><a href="/produtos/excluir/{{$p->id}}"><button class="btn btn-danger">Excluir</button></a></td>
+                           <td><a href="/produtos/alterar/{{$p->id}}"><button class="btn btn-warning">Alterar</button></a></td>
                         </tr>
                      @endforeach
                   </table>
