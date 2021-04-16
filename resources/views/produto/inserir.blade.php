@@ -7,7 +7,7 @@
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <title>Inserir Produto</title>
 
-     <link href="../../css/app.css" rel="stylesheet">
+     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div class="container">

@@ -2,7 +2,8 @@
 <html lang="pt-br">
   <head>
       <title>Pesquisar Produto</title>
-      <link href="../../css/app.css" rel="stylesheet">
+      <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+
   </head>
 <body>
      <div class="container">

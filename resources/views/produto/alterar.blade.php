@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
    <title>Alterar Produto</title>
-   <link href="../../css/app.css" rel="stylesheet">
+   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 <body>
     <div class="container">
         <h1 class="mt-2">Alterar Produto</h1>

@@ -72,6 +72,8 @@ class ProdutoController extends Controller
 
         $mensagem = "Produto excluído com sucesso!.";
 
+        $produtos = Produto::all();
+
         return view('produto.pesquisar')->with('mensagem', $mensagem)->with('produtos', $produtos);
     }
 }
